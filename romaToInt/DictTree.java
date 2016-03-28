@@ -1,6 +1,11 @@
 package romaToInt;
 
 public class DictTree {
+	private Node dictTree;
+	public DictTree() {
+		this.dictTree = new Node('s', 0);
+		
+	}
 	class Node {
 		private char str;
 		private int value;
@@ -15,8 +20,15 @@ public class DictTree {
 		}
 	}
 		
-	public void buildDT() {
+	public static DictTree buildDT() {
 		/* todo: build dict tree */
-		System.out.println("Method of inner class");
+		DictTree  dictTree = new DictTree();
+		Node root = dictTree.new Node('C',100);
+		dictTree.dictTree = root;
+		root.leftChild = dictTree.new Node('C', 200);
+		root.rightChild = dictTree.new Node('D', 400);
+		root.leftChild.leftChild = dictTree.new Node('C', 300);
+		return dictTree;
+		
 	}
 }
