@@ -1,8 +1,5 @@
 package romaToInt;
 
 public abstract class DictTree {
-	public int parseStr(String str){
-		return 0;
-		
-	}
+	public abstract int parseStr();
 }
