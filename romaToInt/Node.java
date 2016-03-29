@@ -19,10 +19,12 @@ public class Node extends DictTree {
 			return 0;
 		}
 		if (str.charAt(0) == this.str) {
-			res = this.leftChild.parseStr(str.substring(1));
-			if (res == 0) {
-				res = this.rightChild.parseStr(str.substring(1));
-			}
+			if (str.length() > 1) {
+				res = this.leftChild.parseStr(str.substring(1));
+				if (res == 0) {
+					res = this.rightChild.parseStr(str.substring(1));
+				}
+				}
 			if (res != 0) {
 				return res;
 			} else {
