@@ -6,6 +6,7 @@ public class Node extends DictTree {
 	private int value;
 	private Node leftChild;
 	private Node rightChild;
+	private Node middleChild;
 	
 	public Node(char str, int value) {
 		this.str = str;
@@ -24,6 +25,9 @@ public class Node extends DictTree {
 				if (res == 0) {
 					res = this.rightChild.parseStr(str.substring(1));
 				}
+				if (res == 0) {
+					res = this.middleChild.parseStr(str.substring(1));
+				}
 				}
 			if (res != 0) {
 				return res;
@@ -35,12 +39,14 @@ public class Node extends DictTree {
 		
 		return res;
 	}
-	public static Node buildDT() {
+	public static Node buildDT(char C, char D, char M, int value) {
 		/* todo: build dict tree */
-		Node root = new Node('C',100);
-		root.leftChild = new Node('C', 200);
-		root.rightChild = new Node('D', 400);
-		root.leftChild.leftChild = new Node('C', 300);
+		Node root = new Node(C,value);
+		root.leftChild = new Node(C, 2*value);
+		root.rightChild = new Node(D, 4*value);
+		root.middleChild = new Node(M, 9*value);
+		root.leftChild.leftChild = new Node(C, 3*value);
+		
 		return root;
 	}
 }
