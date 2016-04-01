@@ -21,23 +21,25 @@ public class Node extends DictTree {
 		}
 		if (str.charAt(0) == this.str) {
 			if (str.length() > 1) {
-				res = this.leftChild.parseStr(str.substring(1));
+				if (this.leftChild != null)
+					res = this.leftChild.parseStr(str.substring(1));
 				if (res == 0) {
-					res = this.rightChild.parseStr(str.substring(1));
+					if (this.rightChild != null)
+						res = this.rightChild.parseStr(str.substring(1));
 				}
 				if (res == 0) {
-					res = this.middleChild.parseStr(str.substring(1));
+					if (this.middleChild != null)
+						res = this.middleChild.parseStr(str.substring(1));
 				}
-				}
-			if (res != 0) {
+				if (res == 0)
+					return this.value + this.parseStr(str.substring(1));
 				return res;
 			} else {
 				return this.value;
 			}
-
+		} else {
+			return 0;
 		}
-		
-		return res;
 	}
 	public static Node buildDT(char C, char D, char M, int value) {
 		/* todo: build dict tree */
