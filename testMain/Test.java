@@ -35,15 +35,16 @@ public class Test {
 		DictTree C = Node.buildDT('C', 'D', 'M', 100);
 		DictTree X = Node.buildDT('X', 'L', 'C', 10);
 		DictTree I = Node.buildDT('I', 'V', 'X', 1);
+
 		ArrayList<DictTree> dictTree = new ArrayList<>();
 		dictTree.add(C);
 		dictTree.add(X);
 		dictTree.add(I);
+		
+		// assert statements
+		assertEquals("CM", 900, C.parseStr(str));
+		assertEquals("CCC", 300, C.parseStr(str));
 
-		int result = parse(dictTree, str);
-		System.out.println((result));
-		
-		
 	}
 
 
