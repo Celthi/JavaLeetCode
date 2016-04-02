@@ -24,9 +24,9 @@ public class Test {
 	@org.junit.Test
 	public void test() {
 		// fail("Not yet implemented");
-		String str;
-		Scanner in = new Scanner(System.in);
-		str = in.nextLine();
+		// String str;
+		// Scanner in = new Scanner(System.in);
+		// str = in.nextLine();
 		
 		// Solution one = new Solution();
 		// int num = 0;
@@ -42,8 +42,14 @@ public class Test {
 		dictTree.add(I);
 		
 		// assert statements
-		assertEquals("CM", 900, C.parseStr(str));
-		assertEquals("CCC", 300, C.parseStr(str));
+		String str1 = "CM";
+		String str2 = "CCC";
+		String str3 = "CMII";
+		String str4 = "MDCXVI";
+		assertEquals(str1, 300, C.parseStr(str1));
+		assertEquals(str2, 300, C.parseStr(str2));
+		assertEquals(str3, 300, C.parseStr(str3));
+		assertEquals(str4, 300, C.parseStr(str4));
 
 	}
 
