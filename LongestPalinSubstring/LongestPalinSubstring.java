@@ -19,6 +19,9 @@ public class LongestPalinSubstring {
 		int id = 1;
 		int mx = 1;
 		for (int i = 1; i < p.length - 1; i++) {
+			/* 上限必须是p.length - 1，因为下标进行到处理过后的倒数第二个，
+			 * 不是最后一个。
+			 */
 			if (mx > i) {
 				p[i] = mx-i > p[2*id-i] ? p[2*id-i] : mx - i;
 			}
