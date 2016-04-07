@@ -1,8 +1,7 @@
 #LeetCode 
 使用Java，
 
-1. Roma String to Number.
-    构建字典树，也就是信息编码里面的前缀码树
+1. 
 
 
 2. 最大回文串， 使用manacher算法，注意有三点，
